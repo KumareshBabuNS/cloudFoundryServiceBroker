@@ -1,0 +1,10 @@
+---
+applications:
+- name: TemperatureBroker
+  memory: 512M
+  host: TemperatureBroker
+  domain: local.pcfdev.io
+  env:
+    T_SERVICE_HOST: citytemperatures.local.pcfdev.io
+  services:
+  - localdb
