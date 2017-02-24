@@ -98,9 +98,9 @@ public class ServiceBrokerController {
 		} else {
 			Credentials credentials = new Credentials();
 			credentials.setId(UUID.randomUUID().toString());
-			credentials.setUri("http://" + myUri() + "/HaaSh/" + instanceId);
-			credentials.setUsername("warreng");
-			credentials.setPassword("natedogg");
+			credentials.setUri("http://" + myUri() + "/weatherapp/" + instanceId);
+			credentials.setUsername("user");
+			credentials.setPassword("pass");
 			serviceBinding.setCredentials(credentials);
 			serviceBindingRepository.save(serviceBinding);
 			return new ResponseEntity<Object>(wrapCredentials(credentials), HttpStatus.CREATED);
