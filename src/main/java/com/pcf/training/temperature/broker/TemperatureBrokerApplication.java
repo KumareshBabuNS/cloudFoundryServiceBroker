@@ -11,6 +11,7 @@ import org.springframework.cloud.CloudFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @SpringBootApplication
@@ -27,6 +28,11 @@ public class TemperatureBrokerApplication {
 	@Bean
 	public DataSource dataSource() {
 		return cloud().getSingletonServiceConnector(DataSource.class, null);
+	}
+
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
 	}
 
 	public static void main(String[] args) {
